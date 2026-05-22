@@ -2,6 +2,7 @@ package br.com.pedrohqo.safehealth.application.usecases;
 
 import br.com.pedrohqo.safehealth.application.ports.ConsultationRepositoryPort;
 import br.com.pedrohqo.safehealth.domain.Consultation;
+import br.com.pedrohqo.safehealth.infrastructure.web.dto.ScheduledConsultationRequest;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
