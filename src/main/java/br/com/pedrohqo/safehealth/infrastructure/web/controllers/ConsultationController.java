@@ -28,7 +28,8 @@ public class ConsultationController {
         Consultation consultation = scheduleConsultationUseCase.execute(
                 request.patientId(),
                 request.doctorId(),
-                request.appointmentDate());
+                request.appointmentDate(),
+                request.insuranceType());
 
         return ResponseEntity.status(HttpStatus.CREATED).body(consultation);
     }

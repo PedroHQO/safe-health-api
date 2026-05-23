@@ -9,14 +9,16 @@ public class Consultation {
     private UUID doctorId;
     private LocalDateTime appointmentDate;
     private ConsultationStatus status;
+    private InsuranceType type;
 
-    public Consultation(UUID patient, UUID doctorId, LocalDateTime dateHour) {
+    public Consultation(UUID patient, UUID doctorId, LocalDateTime dateHour, InsuranceType type) {
         validateFutureDate(dateHour);
         this.id = UUID.randomUUID();
         this.patientId = patient;
         this.doctorId = doctorId;
         this.appointmentDate = dateHour;
         this.status = ConsultationStatus.SHEDULED;
+        this.type = type;
     }
 
     private void validateFutureDate(LocalDateTime date){
