@@ -26,6 +26,7 @@ public class ConsultationRepositoryAdapter implements ConsultationRepositoryPort
         consultationEntity.setDoctorId(consultation.getDoctorId());
         consultationEntity.setAppointmentDate(consultation.getAppointmentDate());
         consultationEntity.setStatus(consultation.getStatus());
+        consultationEntity.setInsuranceType(consultation.getInsuranceType());
 
         consultationJpaRepository.save(consultationEntity);
         return consultation;

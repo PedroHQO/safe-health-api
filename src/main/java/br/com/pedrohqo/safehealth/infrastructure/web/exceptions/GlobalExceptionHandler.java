@@ -1,7 +1,6 @@
-package br.com.pedrohqo.safehealth.infrastructure.web.exceotions;
+package br.com.pedrohqo.safehealth.infrastructure.web.exceptions;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ProblemDetail;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -19,7 +18,7 @@ public class GlobalExceptionHandler {
 
         problemDetail.setTitle("Regra de negócio violada");
         problemDetail.setType(URI.create("https://safehealth.com/erros/bad-request"));
-        problemDetail.setProperty("timestamp: ", LocalDateTime.now());
+        problemDetail.setProperty("timestamp", LocalDateTime.now());
 
         return problemDetail;
     }

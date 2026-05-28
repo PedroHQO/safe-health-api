@@ -1,6 +1,7 @@
 package br.com.pedrohqo.safehealth.infrastructure.persistence.entities;
 
 import br.com.pedrohqo.safehealth.domain.ConsultationStatus;
+import br.com.pedrohqo.safehealth.domain.InsuranceType;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
@@ -25,6 +26,10 @@ public class ConsultationEntity {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private ConsultationStatus status;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "insurance_type", nullable = false)
+    private InsuranceType insuranceType;
 
     public ConsultationEntity() {
     }
@@ -75,5 +80,13 @@ public class ConsultationEntity {
 
     public void setStatus(ConsultationStatus status) {
         this.status = status;
+    }
+
+    public InsuranceType getInsuranceType() {
+        return insuranceType;
+    }
+
+    public void setInsuranceType(InsuranceType insuranceType) {
+        this.insuranceType = insuranceType;
     }
 }

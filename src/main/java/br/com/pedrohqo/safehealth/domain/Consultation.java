@@ -26,6 +26,10 @@ public class Consultation {
             throw new IllegalArgumentException("A consulta deve ser marcada para uma data futura!");
         }
     }
+    
+    public InsuranceType getInsuranceType(){
+        return type;
+    }
 
     public UUID getId() {
         return id;

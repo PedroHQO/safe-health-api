@@ -10,3 +10,10 @@ services:
       POSTGRES_PASSWORD: admin123
     ports:
       - "5433:5432"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: safehealth-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
